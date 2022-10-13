@@ -1,12 +1,16 @@
-import "./HomeBanner.scss";
+import BannerBG from "../BannerBG"
+import { StyledBannerSection, StyledBannerWrapper } from "../styles/Banner.stlyles"
 
 const HomeBanner = ()=> {
     return (
-        <section className="banner_section">
-            <div className="banner_container">
+        <StyledBannerSection>
+            <BannerBG />
+            <StyledBannerWrapper>
+
                 
-            </div> 
-        </section>
+
+            </StyledBannerWrapper>
+        </StyledBannerSection>
     )
 }
 

@@ -63,3 +63,22 @@ ol,ul{
     }
   }
   
+
+  /* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--third-color) var(--bg-color);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: var(--bg-color);
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color:  var(--third-color);
+  }

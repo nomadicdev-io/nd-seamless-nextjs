@@ -1,8 +1,15 @@
+import { StyledHeader, StyledHeaderWrapper, StyledNavImage } from "../styles/Header.styles";
+import HeaderComponent from "./HeaderComponent";
+import HeaderImage from "./HeaderImage";
+
 const Header = ()=> {
     return (
-        <header>
-            <h2>Header</h2>
-        </header>
+        <StyledHeader>
+            <StyledHeaderWrapper>
+                <HeaderImage />
+                <HeaderComponent />
+            </StyledHeaderWrapper>
+        </StyledHeader>
     )
 }
 
