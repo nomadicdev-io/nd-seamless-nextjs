@@ -2,17 +2,21 @@ import Head from "next/head";
 import styles from "../../styles/Home.module.scss";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useWebsiteContext } from "../../store/websiteContent";
 
 export default function MainLayout({children}) {
+
+  const {metadata} = useWebsiteContext();
+
   return (
     <>
         <Head>
-            <title>Seamless Oilfield Equipments Supplies | #1 Oilfield Equipments Supplies in UAE | Abu Dhabi | Dubai</title>
-            <meta name="description" content="We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China ."/>
+            <title>{metadata.title}</title>
+            <meta name="description" content={metadata.description}/>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-            <meta property="og:title" content="Seamless Oilfield Equipments Supplies | #1 Oilfield Equipments Supplies in UAE | Abu Dhabi | Dubai" />
-            <meta property="og:description" content="We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China . " />
-            <meta property="og:image" content="/og-bg.jpg" />
+            <meta property="og:title" content={metadata.ogtitle} />
+            <meta property="og:description" content={metadata.ogDescription} />
+            <meta property="og:image" content={metadata.ogImage} />
             <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
             <link rel="preload" href="/logo.svg" as="image"/>
             <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
@@ -31,11 +35,11 @@ export default function MainLayout({children}) {
             <link rel="icon" type="image/png" size="16x16" href="/favicon-16x16.png"/>
             <link rel="manifest" href="/manifest.json"/>
         </Head>
-        <Header />
+        {/* <Header /> */}
 
             <main className={styles.page_}>{children}</main>
 
-        {/* <Footer /> */}
+        <Footer />
     </>
   )
 }

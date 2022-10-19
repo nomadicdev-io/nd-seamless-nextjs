@@ -1,8 +1,8 @@
 import { StyledSection } from "./styles/Common.styles";
 
-const UISection = ({children})=> {
+const UISection = ({children, havbePaddingBottom, id})=> {
     return (
-        <StyledSection>
+        <StyledSection id={id} havbePaddingBottom={havbePaddingBottom} >
             {children}
         </StyledSection>
     )

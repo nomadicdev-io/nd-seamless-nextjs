@@ -1,0 +1,105 @@
+{
+    "title": "Seamless Oilfield Equipments Supplies",
+    "metadata": {
+        "title": "Seamless Oilfield Equipments Supplies | #1 Oilfield Equipments Supplies in UAE | Abu Dhabi | Dubai",
+        "description": "We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China .",
+        "ogtitle": "Seamless Oilfield Equipments Supplies | #1 Oilfield Equipments Supplies in UAE | Abu Dhabi | Dubai",
+        "ogDescription": "We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China .",
+        "ogImage": "https://ciersten.sirv.com/Images/og-bg.jpg"
+    },
+    "banner": {
+        "title": "Seamless",
+        "subtitle": "Oilfield Equipments ",
+        "description": "A recognized international Project Management and Supply of Pipes, fittings, Valves & Chemicals."
+    },
+    "about": {
+        "metadata": {
+            "title": "About | Seamless Oilfield Equipments Supplies"
+        },
+        "title": "About Seamless",
+        "shortDescription": "We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China .",
+        "description": "<p>We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China.</p><p>Our stocking range consists of products of special material like – Duplex SS, Low temperature and Stainless Steel in different grades along with CS materials. Most importantly, all our principles are approved by shell and major Abu Dhabi oil companies These include ADNOC,KOC , ARAMACO,  PDO, QP etc. Hence we can provide the quality material within a short period and at most competitive rates, thereby meeting the customer requirement easily. More over our valves  approved in  KOC& PDO.</p><p>Seamless Oilfield Equipment Supplies offers the latest technologies in piping as well as an independent systems integrator, We provide you with tailor made packages matching your technical requirements based on your application. </p>",
+        "widget": [{
+            "id": "widget1",
+            "name": "24 x 7 Support",
+            "description": "Our support team is always here for you.",
+            "icon": "https://ciersten.sirv.com/Images/widget-01.svg"
+        }, {
+            "id": "widget2",
+            "name": "Quality Products",
+            "description": "Our products are meeting industrial standards.",
+            "icon": "https://ciersten.sirv.com/Images/widget-02.svg"
+        }, {
+            "id": "widget3",
+            "name": "Delivery Support",
+            "description": "On site delivery setup. Fast and quality setup.",
+            "icon": "https://ciersten.sirv.com/Images/widget-03.svg"
+        }, {
+            "id": "widget4",
+            "name": "Wide choice",
+            "description": "We provide a wide choice of products.",
+            "icon": "https://ciersten.sirv.com/Images/widget-04.svg"
+        }]
+    },
+    "whoweare": {
+        "metadata": {
+            "title": "Who We Are | Seamless Oilfield Equipments Supplies"
+        },
+        "title": "Who We Are",
+        "description": "Seamless Oilfield Equipment Supplies offers the latest technologies in piping as well as an independent systems integrator, We provide you with tailor made packages matching your technical requirements based on your application. ",
+        "download": {
+            "title": "Want to Know More About Us ?",
+            "buttontitle": "Download Our Brochure",
+            "link": "https://ciersten.sirv.com/download/samplepdf.pdf"
+        }
+    },
+    "products": {
+        "metadata": {
+            "title": "Products | Seamless Oilfield Equipments Supplies"
+        },
+        "title": "Our Products",
+        "description": "Seamless Oilfield Equipment provies a wide variety of indestrial standard products."
+    },
+    "services": {
+        "metadata": {
+            "title": "Services | Seamless Oilfield Equipments Supplies"
+        },
+        "title": "Our Services",
+        "description": "For 20 plus years seamless Oilfield Equipment has supported customers through a range of Project and Bulk materials requirements with Supply of Pipe,flanges,valves& chemicals.",
+        "items": [
+            {"id": "services-01", "name": "Logistical Support", "imageUrl": "https://ciersten.sirv.com/Images/services-01.jpg" },
+            {"id": "services-02", "name": "Preparation of Tender Packages", "imageUrl": "https://ciersten.sirv.com/Images/services-02.jpg" },
+            {"id": "services-03", "name": "Contract Administration", "imageUrl": "https://ciersten.sirv.com/Images/services-03.jpg" },
+            {"id": "services-04", "name": "Quality Assurance", "imageUrl": "https://ciersten.sirv.com/Images/services-04.jpg" },
+            {"id": "services-05", "name": "Cost Control", "imageUrl": "https://ciersten.sirv.com/Images/services-05.jpg" },
+            {"id": "services-06", "name": "Project Planning", "imageUrl": "https://ciersten.sirv.com/Images/services-06.jpg" },
+            {"id": "services-07", "name": "Emergency Shut Down Supplies", "imageUrl": "https://ciersten.sirv.com/Images/services-07.jpg" },
+            {"id": "services-08", "name": "Documentation, Technical  Support", "imageUrl": "https://ciersten.sirv.com/Images/services-08.jpg" }
+        ]
+    },
+    "clients": {
+        "title": "Our Clients",
+        "items": [
+            {"id": "client-01", "name": "ADNOC", "imageUrl": "https://ciersten.sirv.com/Images/client-01.png", "link": "https://www.adnoc.ae/"},
+            {"id": "client-02","name": "Kuwait Oil Compan", "imageUrl": "https://ciersten.sirv.com/Images/client-02.png", "link": "https://www.kockw.com/"},
+            {"id": "client-03","name": "Saudo Aramco", "imageUrl": "https://ciersten.sirv.com/Images/client-03.png", "link": "https://www.aramco.com/"},
+            {"id": "client-04","name": "Qatar Petroleum", "imageUrl": "https://ciersten.sirv.com/Images/client-04.png", "link": "https://www.qatarenergy.qa/en/Pages/Home.aspx"}
+        ],
+        "quality": {
+            "title": "Quality Management",
+            "description": "Seamless is an  ISO 9001:2015 and implements the highest standard of quality management system and design. The principals implemented are the frame work used by the management to improve performance and perpetuate excellence."
+        }
+    },
+    "contact": {
+        "title": "Contact Us",
+        "address": ["Address Line 1", "Abu Dhabi", "United Arab Emirates"],
+        "phone": ["+971 456 788", "+971 525 90123"],
+        "email": ["info@seamless.com", "contact @seamless.com"],
+        "socialmedia": {
+            "facebook": "/",
+            "instagram": "/",
+            "twitter": "/",
+            "youtube": "/"
+        }
+    }
+}
