@@ -1,8 +1,8 @@
 import { StyledTextArea } from "./styles/Common.styles";
 
-const TextArea = ({children})=> {
+const TextArea = ({children, align, noPadding})=> {
     return (
-        <StyledTextArea align="center">
+        <StyledTextArea align={align} noPadding={noPadding}>
             {children}
         </StyledTextArea>
     )

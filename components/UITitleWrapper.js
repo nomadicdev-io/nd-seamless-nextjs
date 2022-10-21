@@ -1,8 +1,8 @@
 import { StyledTitleWrapper } from "./styles/Common.styles";
 
-const UITitleWrapper = ({children, align})=> {
+const UITitleWrapper = ({children, align, justify})=> {
     return (
-        <StyledTitleWrapper align={align}>
+        <StyledTitleWrapper align={align} justify={justify}>
             {children}
         </StyledTitleWrapper>
     )

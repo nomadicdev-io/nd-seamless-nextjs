@@ -35,7 +35,7 @@ const HomeClients = ()=> {
                             <Swiper
                                 modules={[Navigation]}
                                 spaceBetween={30}
-                                slidesPerView={4}
+                                slidesPerView={2}
                                 navigation={{
                                     prevEl: swiperPrev.current,
                                     nextEl: swiperNext.current

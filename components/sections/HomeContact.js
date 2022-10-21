@@ -7,9 +7,9 @@ import UITitleWrapper from "../UITitleWrapper";
 import mapboxgl from 'mapbox-gl';
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { StlyledMapWrapper, StyledContactWrapper, StyledSocialContact } from "../styles/Contact.styles";
+import { StlyledMapWrapper, StyledAddressWrapper, StyledContactWrapper, StyledSocialContact } from "../styles/Contact.styles";
 import { IconButton } from "../Buttons";
-import { Facebook, Instagram, Twitter, Youtube } from "react-feather";
+import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "react-feather";
 
 
 const HomeContact = ()=> {
@@ -20,18 +20,28 @@ const HomeContact = ()=> {
 
     const mapContainer = useRef(null);
     const map = useRef(null);
-    const [lng, setLng] = useState(54.3773438);
-    const [lat, setLat] = useState(24.453884);
+    const [lng, setLng] = useState(contactContent.location.lng);
+    const [lat, setLat] = useState(contactContent.location.lat);
     const [zoom, setZoom] = useState(10);
 
     useEffect(() => {
+
         if (map.current) return; 
-            map.current = new mapboxgl.Map({
+
+        map.current = new mapboxgl.Map({
             container: mapContainer.current,
             style: 'mapbox://styles/alanshasalim/cl8h4du2l000a14mt9gkeyggn',
             center: [lng, lat],
-            zoom: zoom
+            zoom: zoom,
+            interactive: false
         });
+
+        const el = document.createElement('div');
+        el.className = 'marker_';
+  
+        const marker = new mapboxgl.Marker(el)
+            .setLngLat([lng, lat])
+            .addTo(map.current);
     });
 
     const openSocial = (value)=> {
@@ -49,9 +59,45 @@ const HomeContact = ()=> {
                 <StyledContactWrapper>
 
                     <div className="content_">
-                        <UITitleWrapper align={'flex-start'}>
+                        <UITitleWrapper justify={'flex-start'}>
                             <UITitle title={contactContent.title} />
                         </UITitleWrapper>
+
+                        <StyledAddressWrapper>
+                            <div className="item_">
+                                <div className="icon_">
+                                    <MapPin />
+                                </div>
+                                <div className="field_">
+                                    {
+                                        contactContent.address.map((item, index)=> <span  key={index}>{item}</span>)
+                                    }
+                                </div>
+                            </div>
+
+                            <div className="item_">
+                                <div className="icon_">
+                                    <Phone />
+                                </div>
+                                <div className="field_">
+                                    {
+                                        contactContent.phone.map((item, index)=> <span  key={index}>{item}</span>)
+                                    }
+                                </div>
+                            </div>
+
+                            <div className="item_">
+                                <div className="icon_">
+                                    <Mail />
+                                </div>
+                                <div className="field_">
+                                    {
+                                        contactContent.email.map((item, index)=> <span  key={index}>{item}</span>)
+                                    }
+                                </div>
+                            </div>
+                        </StyledAddressWrapper>
+
                     </div>
 
                     <StyledSocialContact>

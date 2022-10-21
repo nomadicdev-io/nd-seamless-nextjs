@@ -46,7 +46,7 @@ const HomeServices = ()=> {
                             className="services_swiper"
                             modules={[Navigation]}
                             spaceBetween={30}
-                            slidesPerView={3}
+                            slidesPerView={1}
                             navigation={{
                                 prevEl: swiperPrev.current,
                                 nextEl: swiperNext.current

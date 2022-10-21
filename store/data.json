@@ -58,7 +58,16 @@
             "title": "Products | Seamless Oilfield Equipments Supplies"
         },
         "title": "Our Products",
-        "description": "Seamless Oilfield Equipment provies a wide variety of indestrial standard products."
+        "description": "Seamless Oilfield Equipment provies a wide variety of indestrial standard products.",
+        "items": [
+            {"id": "products-01", "name": "Linepipe", "type": "Piping Products ", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-01.jpg"},
+            {"id": "products-02", "name": "OCTG", "type": "Piping Products ", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-02.jpg"},
+            {"id": "products-03", "name": "Butterfly", "type": "Valves", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-03.jpg"},
+            {"id": "products-04", "name": "Cryogenic Valves", "type": "Valves", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-04.jpg"},
+            {"id": "products-05", "name": "WNRF", "type": "Flanges", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-05.jpg"},
+            {"id": "products-06", "name": "Elbow", "type": "Fittings", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-06.jpg"},
+            {"id": "products-07", "name": "Reducers", "type": "Fittings", "description": "", "imageUrl": "https://ciersten.sirv.com/Images/products-07.jpg"}
+        ]
     },
     "services": {
         "metadata": {
@@ -95,6 +104,10 @@
         "address": ["Address Line 1", "Abu Dhabi", "United Arab Emirates"],
         "phone": ["+971 456 788", "+971 525 90123"],
         "email": ["info@seamless.com", "contact @seamless.com"],
+        "location": {
+            "lng" : "54.3773438",
+            "lat" : "24.453884"
+        },
         "socialmedia": {
             "facebook": "/",
             "instagram": "/",

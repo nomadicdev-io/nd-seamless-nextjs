@@ -4,7 +4,7 @@ import { StyledSectionBG } from "./styles/Common.styles";
 const SectionBG = ({src})=> {
     return (
         <StyledSectionBG >
-            <Image src={src} width="1920" height="1062" />
+            <Image src={src} layout="fill" />
         </StyledSectionBG>
     )
 }

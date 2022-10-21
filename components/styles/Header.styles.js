@@ -4,12 +4,24 @@ import styled from "styled-components";
 const StyledHeader = styled.header`
     position: fixed;
     width: 100%;
-    height: 10vh;
+    height: ${({isScrolled})=> isScrolled ? '7.5vh' : '10vh'};
     top:0;
     left:0;
     z-index: 99;
     transition: all 0.3s ease;
     padding: 0.5em 0;
+
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        opacity: ${({isScrolled})=> isScrolled ? 0.5 : 0};
+    }
+
 `;
 
 const StyledHeaderWrapper = styled.div`

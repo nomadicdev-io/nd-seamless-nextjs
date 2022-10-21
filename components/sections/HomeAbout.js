@@ -6,6 +6,9 @@ import UITitleWrapper from "../UITitleWrapper";
 import { useWebsiteContext } from "../../store/websiteContent";
 import { AnchorButton, ButtonGroup } from "../Buttons";
 import { ArrowRight } from 'react-feather';
+import { StyledAboutImage, StyledAboutWidget } from "../styles/Common.styles";
+import WidgetItem from "../WidgetItem";
+import Image from "next/image";
 
 const HomeAbout = ()=> {
 
@@ -31,7 +34,30 @@ const HomeAbout = ()=> {
                                 <ArrowRight />
                             </AnchorButton>
                         </ButtonGroup>
+
+                        <StyledAboutWidget>
+                            {
+                                abooutContent.widget.map((item)=> <WidgetItem data={item}  key={item.id}/>)
+                            }
+                        </StyledAboutWidget>
+
+                        
                     </Container>
+
+                    <StyledAboutImage>
+                        <div className="image_">
+                            <Image src="/about-img-03.jpg" layout="fill" />
+                        </div>
+
+                        <div className="image_">
+                            <Image src="/about-img-02.jpg" layout="fill" />
+                        </div>
+
+                        <div className="image_">
+                            <Image src="/about-img-01.jpg" layout="fill" />
+                        </div>
+                    </StyledAboutImage>
+
                 </UISection>
             }
         </>

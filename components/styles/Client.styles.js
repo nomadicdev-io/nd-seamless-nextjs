@@ -49,6 +49,10 @@ const StyledQualityWrapper = styled.div`
         overflow: hidden;
         background-color: var(--primary-color);
         background: var(--gradient-color);
+
+        @media only screen and (max-width: 767px) {
+            width: 100%;
+        }
         
         svg{
             position: relative;

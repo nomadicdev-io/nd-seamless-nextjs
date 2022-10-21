@@ -35,7 +35,7 @@ export default function MainLayout({children}) {
             <link rel="icon" type="image/png" size="16x16" href="/favicon-16x16.png"/>
             <link rel="manifest" href="/manifest.json"/>
         </Head>
-        {/* <Header /> */}
+        <Header />
 
             <main className={styles.page_}>{children}</main>
 

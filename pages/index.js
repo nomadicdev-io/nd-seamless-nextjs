@@ -13,13 +13,13 @@ export default function Home() {
   return (
    <>
     <WebsiteContentProvider>
-      {/* <HomeBanner />
+      <HomeBanner />
       <HomeAbout />    
       <HomeWho />
-      <HomeProducts /> */}
-      {/* <HomeServices /> */}
+      <HomeProducts /> 
+      <HomeServices /> 
       <HomeClients />
-      <HomeContact />
+      <HomeContact /> 
     </WebsiteContentProvider>
    </>
   )
