@@ -5,6 +5,7 @@ const StyledBannerSection = styled.section`
     display: block;
     width: 100%;
     height: 100vh;
+    overflow: hidden;
 `;
 
 const StyledBannerWrapper = styled.div`

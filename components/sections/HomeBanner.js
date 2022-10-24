@@ -4,14 +4,31 @@ import { useWebsiteContext } from "../../store/websiteContent"
 import { AnchorButton, ButtonGroup } from "../Buttons";
 import { ArrowRight } from "react-feather";
 import Image from "next/image";
+import { motion } from "framer-motion"
 
 const HomeBanner = ()=> {
 
     const {bannerContent} = useWebsiteContext();
 
+    const bannerAnim = {
+        offscreen: { },
+        onscreen: {
+            transition: {
+                staggerChildren: 0.1,
+            }
+        }
+    }
+
     return (
-        <StyledBannerSection>
+        <StyledBannerSection
+             as={motion.section}
+            initial="offscreen"
+            whileInView="onscreen"
+            variants={bannerAnim}
+            viewport={{ once: true }}
+        >
             <BannerBG />
+
             <StyledBannerWrapper>
 
                 <div className="content_">
