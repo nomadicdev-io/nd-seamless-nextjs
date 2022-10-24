@@ -35,7 +35,7 @@ const HomeProducts = ()=> {
                             <UITitle title={productsContent.title} />
                         </UITitleWrapper>
 
-                        <TextArea align={'start'} noPadding={true}>
+                        <TextArea align={'start'} nopadding={'true'}>
                             <p>{productsContent.description}</p>
                         </TextArea>
 

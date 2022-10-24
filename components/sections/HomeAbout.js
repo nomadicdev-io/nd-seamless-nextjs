@@ -9,10 +9,35 @@ import { ArrowRight } from 'react-feather';
 import { StyledAboutImage, StyledAboutWidget } from "../styles/Common.styles";
 import WidgetItem from "../WidgetItem";
 import Image from "next/image";
+import { motion } from "framer-motion"
 
 const HomeAbout = ()=> {
 
     const {abooutContent} = useWebsiteContext();
+
+    const widgetScreen = {
+        offscreen: { opacity: 0 },
+        onscreen: {
+            opacity: 1,
+            transition: {
+                delay: 1.2,
+                staggerChildren: 0.1,
+                when: "beforeChildren",
+                delayChildren: 0.1,
+            }
+        }
+    }
+
+    const imageItem = {
+        offscreen: { opacity: 0, y: 200},
+        onscreen: { 
+            opacity: 1, 
+            y: 0,
+            transition: {
+                duration: 0.6
+            } 
+        }
+    }
 
     return (
         <>
@@ -22,14 +47,14 @@ const HomeAbout = ()=> {
                 <UISection id="about">
                     <Container>
                         <UITitleWrapper align={'center'}>
-                            <UITitle title={abooutContent.title} />
+                            <UITitle title={abooutContent.title} animdelay={0.6}/>
                         </UITitleWrapper>
 
-                        <TextArea>
+                        <TextArea animdelay={0.8}>
                             <p>{abooutContent.shortDescription}</p>
                         </TextArea>
 
-                        <ButtonGroup align="center" justif="center" >
+                        <ButtonGroup align="center" justif="center" animdelay={1}>
                             <AnchorButton title="Read More"  href="/about">
                                 <ArrowRight />
                             </AnchorButton>
@@ -37,24 +62,36 @@ const HomeAbout = ()=> {
 
                         <StyledAboutWidget>
                             {
-                                abooutContent.widget.map((item)=> <WidgetItem data={item}  key={item.id}/>)
+                                abooutContent.widget.map((item, index)=> <WidgetItem data={item} delay={index} key={item.id}/>)
                             }
                         </StyledAboutWidget>
 
                         
                     </Container>
 
-                    <StyledAboutImage>
+                    <StyledAboutImage
+                         as={motion.div}
+                         initial="offscreen"
+                         whileInView="onscreen"
+                         variants={widgetScreen}
+                         viewport={{ once: true }}
+                    >
                         <div className="image_">
-                            <Image src="/about-img-03.jpg" layout="fill" />
+                            <motion.div className="img_wrap" variants={imageItem}>
+                                <Image src="/about-img-03.jpg" layout="fill" />
+                            </motion.div>
                         </div>
 
                         <div className="image_">
-                            <Image src="/about-img-02.jpg" layout="fill" />
+                            <motion.div className="img_wrap" variants={imageItem}>
+                                <Image src="/about-img-02.jpg" layout="fill"/>
+                            </motion.div>
                         </div>
 
                         <div className="image_">
-                            <Image src="/about-img-01.jpg" layout="fill" />
+                            <motion.div className="img_wrap" variants={imageItem}>
+                                <Image src="/about-img-01.jpg" layout="fill"/>
+                            </motion.div>
                         </div>
                     </StyledAboutImage>
 

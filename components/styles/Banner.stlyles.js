@@ -43,6 +43,7 @@ const StyledBannerWrapper = styled.div`
         height: 100%;
         flex-wrap: wrap;
         z-index: 2;
+        padding-top: 10vh;
 
         @media only screen and (max-width: 767px){
             width: 100%;

@@ -1,5 +1,29 @@
 import styled, { keyframes } from "styled-components";
 
+const StyledLoadingScreen = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .image_box{
+        position: relative;
+        display: block;
+        width: auto;
+        height: 120px;
+        text-align: center;
+
+        img{
+            position: relative;
+            display: block;
+        }
+    }
+`
+
 const StyledSection = styled.section`
     --s-padding: 15vh;
     position: relative;
@@ -31,7 +55,7 @@ const StyledTextArea = styled.div`
     display: block;
     width: 100%;
     padding: 0 10%;
-    padding: ${({noPadding})=> noPadding ? '0' : '0 10%'};
+    padding: ${({nopadding})=> nopadding ? '0' : '0 10%'};
     margin-top: 1em;
     text-align: ${({align})=> align ? align : 'center' };
 
@@ -388,6 +412,15 @@ const StyledAboutImage = styled.div`
             object-position: center;
         }
 
+        .img_wrap{
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: calc(var(--font-size) * 2);
+        }
+
         &:nth-child(1), &:nth-child(2){
             position: absolute;
             bottom: 0;
@@ -421,5 +454,6 @@ export {
     StyledFooterWrapper,
     StyledAboutWidget,
     StyledWidgetItem,
-    StyledAboutImage
+    StyledAboutImage,
+    StyledLoadingScreen
 };

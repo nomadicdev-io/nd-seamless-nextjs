@@ -3,10 +3,22 @@ import styles from "../../styles/Home.module.scss";
 import Footer from "./Footer";
 import Header from "./Header";
 import { useWebsiteContext } from "../../store/websiteContent";
+import { useState, useEffect } from "react";
 
 export default function MainLayout({children}) {
 
   const {metadata} = useWebsiteContext();
+  const [scroll, setScroll] = useState(true)
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      const scrollCheck = window.scrollY < 50
+      if (scrollCheck !== scroll) {
+        setScroll(scrollCheck)
+      }
+    })
+  })
+  
 
   return (
     <>
@@ -35,7 +47,7 @@ export default function MainLayout({children}) {
             <link rel="icon" type="image/png" size="16x16" href="/favicon-16x16.png"/>
             <link rel="manifest" href="/manifest.json"/>
         </Head>
-        <Header />
+        <Header isScrolled={!scroll}/>
 
             <main className={styles.page_}>{children}</main>
 

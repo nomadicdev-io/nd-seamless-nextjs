@@ -1,6 +1,7 @@
 import { forwardRef, useState } from "react";
 import { StyledAnchorButton, StyledButtonGroup, StyledIconButton, StyledToggleButton } from "./styles/Button.styles";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion"
 
 const IconButton = forwardRef((props, ref)=> {
     return (
@@ -11,9 +12,18 @@ const IconButton = forwardRef((props, ref)=> {
 })
 
 
-const ButtonGroup = ({children, align, justify, marginTop})=> {
+const ButtonGroup = ({children, align, justify, marginTop, animdelay})=> {
     return (
-        <StyledButtonGroup align={align} justify={justify} marginTop={marginTop}>
+        <StyledButtonGroup
+            as={motion.div}
+            align={align} 
+            justify={justify} 
+            marginTop={marginTop}
+            initial={{ opacity: 0, y: 50, scaleY: 1.5 }}
+            whileInView={{ opacity: 1, y: 0, scaleY: 1 }}
+            viewport={{ once: true}}
+            transition={{type: 'spring', duration: 1.2, delay: animdelay ? animdelay : 1}}
+        >
             {children}
         </StyledButtonGroup>
     )

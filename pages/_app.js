@@ -1,14 +1,34 @@
 import MainLayout from '../components/layouts/MainLayout'
 import '../styles/app.scss';
 import { WebsiteContentProvider } from "../store/websiteContent";
+import { useState, useEffect } from 'react';
+import LoadingScreen from '../components/layouts/LoadingScreen';
 
 function MyApp({ Component, pageProps }) {
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    setIsLoading(true);
+  }, []);
+
   return (
-    <WebsiteContentProvider>
-      <MainLayout>
-        <Component {...pageProps} />
-      </MainLayout>
-    </WebsiteContentProvider>
+
+    <>
+      {
+        isLoading ? (
+          <WebsiteContentProvider>
+          <MainLayout>
+            <Component {...pageProps} />
+          </MainLayout>
+        </WebsiteContentProvider>
+        ) : (
+          <LoadingScreen />
+        )
+      }
+    </>
+
+    
   )
 }
 
