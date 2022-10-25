@@ -46,7 +46,7 @@ const ToggleButton = ()=> {
     )
 }
 
-const AnchorButton = ({title, href, children})=> {
+export default function AnchorButton({title, href, children}){
 
     const router = useRouter();
 
@@ -58,4 +58,5 @@ const AnchorButton = ({title, href, children})=> {
     )
 }
 
-export {IconButton, ToggleButton, AnchorButton, ButtonGroup};
+export {IconButton, ToggleButton, ButtonGroup};
+

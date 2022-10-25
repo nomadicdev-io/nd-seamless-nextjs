@@ -5,7 +5,7 @@ import { StyledProductContent, StyledProductSwiper, StyledProductWrapper } from 
 import TextArea from "../TextArea";
 import UITitle from "../UITitle";
 import UITitleWrapper from "../UITitleWrapper";
-import { AnchorButton, ButtonGroup, IconButton } from "../Buttons";
+import AnchorButton, { ButtonGroup, IconButton } from "../Buttons";
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
 import { Navigation } from 'swiper';

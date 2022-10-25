@@ -1,5 +1,6 @@
 import { StyledBannerBG } from "./styles/Banner.stlyles"
 import { motion } from "framer-motion"
+import Image from "next/image";
 
 const BannerBG = ()=> {
 
@@ -22,10 +23,7 @@ const BannerBG = ()=> {
             animate="visible"
             variants={bgAnim}
         >
-            <motion.picture>
-                <source srcSet="/banner_bg.png" />
-                <img src="/banner_bg.png" alt="Seamless" />
-            </motion.picture>
+            <Image as={motion.img} layout="fill" src="/banner_bg.png" alt="Seamless" />
         </StyledBannerBG>
     )
 }

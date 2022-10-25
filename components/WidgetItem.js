@@ -47,7 +47,7 @@ const WidgetItem = ({data, delay})=> {
             viewport={{ once: true }}
         >
             <motion.div className="icon_" variants={iconitem}>
-                <Image src={data.icon} width={256} height={256}/>
+                <Image src={data.icon} width={256} height={256} alt={data.name}/>
             </motion.div>
             <motion.div className="content_" variants={textItem}>
                 <h4>{data.name}</h4>

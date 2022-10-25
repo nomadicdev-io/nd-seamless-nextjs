@@ -1,7 +1,7 @@
 import BannerBG from "../BannerBG"
 import { StyledBannerSection, StyledBannerWrapper } from "../styles/Banner.stlyles"
 import { useWebsiteContext } from "../../store/websiteContent"
-import { AnchorButton, ButtonGroup } from "../Buttons";
+import AnchorButton, { ButtonGroup } from "../Buttons";
 import { ArrowRight } from "react-feather";
 import Image from "next/image";
 import { motion } from "framer-motion"
@@ -84,7 +84,7 @@ const HomeBanner = ()=> {
                             variants={textAnim}
                             className="image_"
                         >
-                            <Image src="/ft_clients.png" layout="fill"/>
+                            <Image src="/ft_clients.png" layout="fill" alt="Seamless"/>
                         </motion.div>
                     </div>
                 </motion.div>

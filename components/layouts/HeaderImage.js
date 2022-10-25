@@ -6,7 +6,7 @@ const HeaderImage = ({imageUrl})=> {
     return (
         <StyledNavImage>
             <Link href="/">
-                <img src="/logo.svg" alt="Seamless"/>
+                <Image src="/logo.svg"  alt="Seamless" width={187} height={61}/>
             </Link>
         </StyledNavImage>
     )

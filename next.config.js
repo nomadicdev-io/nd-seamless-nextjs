@@ -8,5 +8,8 @@ const nextConfig = {
 module.exports = {
   images: {
     domains: ['ciersten.sirv.com']
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 }

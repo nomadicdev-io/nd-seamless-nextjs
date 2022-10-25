@@ -11,6 +11,7 @@ const ProductsItem = ({data})=> {
                     <Image 
                         src={data.imageUrl} 
                         layout="fill" 
+                        alt={data.name}
                     />
                 </div>
 

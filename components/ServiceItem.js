@@ -16,6 +16,7 @@ const ServiceItem = ({data})=> {
                 <Image 
                     src={data.imageUrl} 
                     layout="fill"
+                    alt={data.name}
                 />
             </div>
         </StyledServiceItem>

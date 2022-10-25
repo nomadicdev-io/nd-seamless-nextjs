@@ -7,7 +7,7 @@ import { useWebsiteContext } from "../../store/websiteContent";
 import { StyledWrapper } from "../styles/Common.styles";
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { AnchorButton, ButtonGroup, IconButton } from "../Buttons";
+import AnchorButton, { ButtonGroup, IconButton } from "../Buttons";
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
 import ClientItem from "../ClientItem";

@@ -4,7 +4,7 @@ import UISection from "../UISection";
 import UITitle from "../UITitle";
 import UITitleWrapper from "../UITitleWrapper";
 import { useWebsiteContext } from "../../store/websiteContent";
-import { AnchorButton, ButtonGroup } from "../Buttons";
+import AnchorButton, { ButtonGroup } from "../Buttons";
 import { ArrowRight } from 'react-feather';
 import { StyledAboutImage, StyledAboutWidget } from "../styles/Common.styles";
 import WidgetItem from "../WidgetItem";
@@ -78,19 +78,19 @@ const HomeAbout = ()=> {
                     >
                         <div className="image_">
                             <motion.div className="img_wrap" variants={imageItem}>
-                                <Image src="/about-img-03.jpg" layout="fill" />
+                                <Image src="/about-img-03.jpg" layout="fill" alt="Seamless"/>
                             </motion.div>
                         </div>
 
                         <div className="image_">
                             <motion.div className="img_wrap" variants={imageItem}>
-                                <Image src="/about-img-02.jpg" layout="fill"/>
+                                <Image src="/about-img-02.jpg" layout="fill" alt="Seamless"/>
                             </motion.div>
                         </div>
 
                         <div className="image_">
                             <motion.div className="img_wrap" variants={imageItem}>
-                                <Image src="/about-img-01.jpg" layout="fill"/>
+                                <Image src="/about-img-01.jpg" layout="fill" alt="Seamless"/>
                             </motion.div>
                         </div>
                     </StyledAboutImage>

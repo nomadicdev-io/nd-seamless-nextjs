@@ -10,7 +10,7 @@ import { StyledWrapper } from "../styles/Common.styles";
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ServiceItem from "../ServiceItem";
-import { AnchorButton, ButtonGroup, IconButton } from "../Buttons";
+import AnchorButton, { ButtonGroup, IconButton } from "../Buttons";
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
 
