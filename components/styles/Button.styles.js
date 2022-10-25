@@ -7,7 +7,7 @@ const StyledButtonGroup = styled.div`
     justify-content: ${({justify})=> justify ? justify : 'center'};
     padding: 0.25em 0;
     grid-gap: 0.5em;
-    margin-top: ${({marginTop})=> marginTop ? marginTop : 0 };
+    margin-top: ${({margintop})=> margintop ? margintop : 0 };
 `;
 
 const StyledIconButton = styled.button`

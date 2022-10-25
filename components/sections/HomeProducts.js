@@ -39,7 +39,7 @@ const HomeProducts = ()=> {
                             <p>{productsContent.description}</p>
                         </TextArea>
 
-                        <ButtonGroup justify="flex-start" align="center" marginTop="1.5em">
+                        <ButtonGroup justify="flex-start" align="center" margintop="1.5em">
                             <UISwiperNav>
                                 <IconButton color={'grey'} iconSize={'sm'} ref={swiperPrev}>
                                     <ArrowLeft />

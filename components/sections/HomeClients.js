@@ -63,7 +63,7 @@ const HomeClients = ()=> {
                             </Swiper>
                         </StyledWrapper>
 
-                        <ButtonGroup justify="space-between" align="center" marginTop="1.5em">
+                        <ButtonGroup justify="space-between" align="center" margintop="1.5em">
                            
                             <AnchorButton title="View More"  href="/clients">
                                 <ArrowRight />

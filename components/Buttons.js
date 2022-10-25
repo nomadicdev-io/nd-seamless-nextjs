@@ -12,17 +12,17 @@ const IconButton = forwardRef((props, ref)=> {
 })
 
 
-const ButtonGroup = ({children, align, justify, marginTop, animdelay})=> {
+const ButtonGroup = ({children, align, justify, margintop = 0, animdelay})=> {
     return (
         <StyledButtonGroup
             as={motion.div}
-            align={align} 
-            justify={justify} 
-            marginTop={marginTop}
             initial={{ opacity: 0, y: 50, scaleY: 1.5 }}
             whileInView={{ opacity: 1, y: 0, scaleY: 1 }}
             viewport={{ once: true}}
             transition={{type: 'spring', duration: 1.2, delay: animdelay ? animdelay : 1}}
+            align={align} 
+            justify={justify} 
+            margintop={margintop}
         >
             {children}
         </StyledButtonGroup>

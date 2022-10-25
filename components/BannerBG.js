@@ -4,14 +4,13 @@ import { motion } from "framer-motion"
 const BannerBG = ()=> {
 
     const bgAnim = {
-        hidden: { opacity: 0, scale: 1.5},
+        hidden: { opacity: 0, scale: 1.25},
         visible: { 
             opacity: 1, 
             scale: 1,
             transition: {
-                duration: 2,
+                duration: 1.5,
                 delay: 0,
-                default: { ease: 'easeIn' }
             } 
         }
     }

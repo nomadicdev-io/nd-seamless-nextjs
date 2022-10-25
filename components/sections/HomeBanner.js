@@ -6,49 +6,88 @@ import { ArrowRight } from "react-feather";
 import Image from "next/image";
 import { motion } from "framer-motion"
 
+const bannerAnim = {
+    hidden: { },
+    visible: {
+        transition: {
+            when: "beforeChildren",
+            staggerChildren: 0.2,
+            delayChildren: 0.3,
+        }
+    }
+}
+
+const textAnim = {
+    hidden: { opacity: 0, y: 70},
+    visible: { 
+        opacity: 1, 
+        y: 0,
+        transition: {
+            duration: 1,
+        } 
+    }
+}
+
+
 const HomeBanner = ()=> {
 
     const {bannerContent} = useWebsiteContext();
 
-    const bannerAnim = {
-        offscreen: { },
-        onscreen: {
-            transition: {
-                staggerChildren: 0.1,
-            }
-        }
-    }
-
     return (
-        <StyledBannerSection
-             as={motion.section}
-            initial="offscreen"
-            whileInView="onscreen"
-            variants={bannerAnim}
-            viewport={{ once: true }}
-        >
+        <StyledBannerSection>
             <BannerBG />
 
             <StyledBannerWrapper>
 
-                <div className="content_">
+                <motion.div 
+                initial="hidden"
+                animate="visible"
+                variants={bannerAnim}
+                className="content_"
+                >
+
                     <div className="inner_">
-                        <h1><span>{bannerContent.title}</span></h1>
-                        <h4>{bannerContent.subtitle}</h4>
-                        <p>{bannerContent.description}</p>
+
+                        <motion.h1
+                             variants={textAnim}
+                        ><span>{bannerContent.title}</span>
+                        </motion.h1>
+
+                        <motion.h4
+                            variants={textAnim}
+                        >
+                            {bannerContent.subtitle}
+                        </motion.h4>
+
+                        <motion.p
+                            variants={textAnim}
+                        >
+                            {bannerContent.description}
+                        </motion.p>
+                        
                         <ButtonGroup justify={'flex-start'}>
                             <AnchorButton title="Read More"  href="/">
                                 <ArrowRight />
                             </AnchorButton>
                         </ButtonGroup>
+
                     </div>
+
                     <div className="ft_clients">
-                        <div className="title_">Featured Clients</div>
-                        <div className="image_">
+                        <motion.div 
+                            variants={textAnim}
+                            className="title_"
+                        >
+                            Featured Clients
+                        </motion.div>
+                        <motion.div 
+                            variants={textAnim}
+                            className="image_"
+                        >
                             <Image src="/ft_clients.png" layout="fill"/>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
             </StyledBannerWrapper>
         </StyledBannerSection>
