@@ -17,13 +17,8 @@ const BannerBG = ()=> {
     }
 
     return (
-        <StyledBannerBG
-            as={motion.div}
-            initial="hidden"
-            animate="visible"
-            variants={bgAnim}
-        >
-            <Image as={motion.img} layout="fill" src="/banner_bg.png" alt="Seamless" />
+        <StyledBannerBG >
+            <Image layout="fill" src="/banner_bg.png" alt="Seamless" />
         </StyledBannerBG>
     )
 }

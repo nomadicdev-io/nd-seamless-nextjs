@@ -205,6 +205,7 @@ const StyledAnchorButton = styled.button`
     background:var(--gradient-color);
     height: calc(var(--font-size) * 2.75);
     border-radius: calc(var(--font-size) * 0.5);
+    color: var(--text-color);
     outline: none;
     border: none;
     padding: 0 1.25em;
