@@ -74,6 +74,10 @@ const HomeClients = ()=> {
                                     spaceBetween: 30,
                                     },
                                 }}
+                                onBeforeInit={(swiper) => {
+                                    swiper.params.navigation.prevEl = swiperPrev.current;
+                                    swiper.params.navigation.nextEl = swiperNext.current;
+                                }}
                                 >
 
                                 {
