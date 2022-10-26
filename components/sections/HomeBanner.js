@@ -6,32 +6,34 @@ import { ArrowRight } from "react-feather";
 import Image from "next/image";
 import { motion } from "framer-motion"
 
-const bannerAnim = {
-    hidden: { },
-    visible: {
-        transition: {
-            when: "beforeChildren",
-            staggerChildren: 0.2,
-            delayChildren: 0.3,
-        }
-    }
-}
-
-const textAnim = {
-    hidden: { opacity: 0, y: 70},
-    visible: { 
-        opacity: 1, 
-        y: 0,
-        transition: {
-            duration: 1,
-        } 
-    }
-}
 
 
 const HomeBanner = ()=> {
 
     const {bannerContent} = useWebsiteContext();
+
+    
+    const bannerAnim = {
+        hidden: { },
+        visible: {
+            transition: {
+                when: "beforeChildren",
+                staggerChildren: 0.2,
+                delayChildren: 0.3,
+            }
+        }
+    }
+
+    const textAnim = {
+        hidden: { opacity: 0, y: 70},
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: {
+                duration: 1,
+            } 
+        }
+    }
 
     return (
         <StyledBannerSection>

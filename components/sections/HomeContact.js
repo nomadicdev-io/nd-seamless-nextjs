@@ -5,10 +5,11 @@ import { useWebsiteContext } from "../../store/websiteContent";
 import UITitle from "../UITitle";
 import UITitleWrapper from "../UITitleWrapper";
 import mapboxgl from 'mapbox-gl';
+import { motion } from "framer-motion";
 
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { StlyledMapWrapper, StyledAddressWrapper, StyledContactWrapper, StyledSocialContact } from "../styles/Contact.styles";
-import { IconButton } from "../Buttons";
+import { DefaultIconButton } from "../Buttons";
 import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "react-feather";
 
 
@@ -23,6 +24,43 @@ const HomeContact = ()=> {
     const [lng, setLng] = useState(contactContent.location.lng);
     const [lat, setLat] = useState(contactContent.location.lat);
     const [zoom, setZoom] = useState(10);
+
+
+    const contactContainerAnim = {
+        offscreen: {opacity: 0},
+        onscreen: {
+            opacity: 1,
+            transition: {
+                delay: 0.2,
+                staggerChildren: 0.1,
+                when: "beforeChildren",
+                delayChildren: 0.2,
+            }
+        }
+    }
+
+    const transformAnim = {
+        offscreen: {opacity: 0, y: 100},
+        onscreen: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: [0.23, 0.48, 0.26, 0.94],
+            }
+        }
+    }
+
+    const scaleAnim = {
+        offscreen: {scale: 0},
+        onscreen: {
+            scale: 1,
+            transition: {
+                duration: 0.8,
+                ease: [0.23, 0.48, 0.26, 0.94],
+            }
+        }
+    }
 
     useEffect(() => {
 
@@ -52,106 +90,139 @@ const HomeContact = ()=> {
         <UISection id={'contact'}>
             <Container>
 
-                <StlyledMapWrapper>
-                    <div ref={mapContainer} className="map-container" />
-                </StlyledMapWrapper>
+                <motion.div
+                    initial="offscreen"
+                    whileInView="onscreen"
+                    variants={contactContainerAnim}
+                    viewport={{ once: true }}
+                >
 
-                <StyledContactWrapper>
+                    <StlyledMapWrapper
+                        as={motion.div}
+                        variants={transformAnim}
+                    >
+                        <div ref={mapContainer} className="map-container" />
+                    </StlyledMapWrapper>
 
-                    <div className="content_">
-                        <UITitleWrapper justify={'flex-start'}>
-                            <UITitle title={contactContent.title} />
-                        </UITitleWrapper>
+                    <StyledContactWrapper
+                        as={motion.div}
+                        variants={transformAnim}
+                    >
 
-                        <StyledAddressWrapper>
-                            <div className="item_">
-                                <div className="icon_">
-                                    <MapPin />
-                                </div>
-                                <div className="field_">
+                        <div className="content_">
+                            <UITitleWrapper justify={'flex-start'}>
+                                <UITitle title={contactContent.title} />
+                            </UITitleWrapper>
+
+                            <StyledAddressWrapper>
+                                <motion.div 
+                                variants={transformAnim}
+                                className="item_"
+                                >
+                                    <div className="icon_">
+                                        <MapPin />
+                                    </div>
+                                    <div className="field_">
+                                        {
+                                            contactContent.address.map((item, index)=> <span  key={index}>{item}</span>)
+                                        }
+                                    </div>
+                                </motion.div>
+
+                                <motion.div 
+                                variants={transformAnim}
+                                className="item_">
+                                    <div className="icon_">
+                                        <Phone />
+                                    </div>
+                                    <div className="field_">
+                                        {
+                                            contactContent.phone.map((item, index)=> <span  key={index}>{item}</span>)
+                                        }
+                                    </div>
+                                </motion.div>
+
+                                <motion.div 
+                                variants={transformAnim}
+                                className="item_">
+                                    <div className="icon_">
+                                        <Mail />
+                                    </div>
+                                    <div className="field_">
+                                        {
+                                            contactContent.email.map((item, index)=> <span  key={index}>{item}</span>)
+                                        }
+                                    </div>
+                                </motion.div>
+                            </StyledAddressWrapper>
+
+                        </div>
+
+                        <StyledSocialContact
+                            as={motion.div}
+                            variants={transformAnim}
+                        >
+                            <motion.h4 variants={transformAnim}>Follow Us On</motion.h4>
+
+                            {   
+                                contactContent.socialmedia &&
+                                <ul>
                                     {
-                                        contactContent.address.map((item, index)=> <span  key={index}>{item}</span>)
-                                    }
-                                </div>
-                            </div>
+                                        contactContent.socialmedia.facebook &&
+                                        <motion.li
+                                            variants={scaleAnim}
+                                        >
+                                            <DefaultIconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.facebook)} >
+                                                <Facebook />
+                                            </DefaultIconButton>
+                                        </motion.li>
 
-                            <div className="item_">
-                                <div className="icon_">
-                                    <Phone />
-                                </div>
-                                <div className="field_">
+                                    }
+
                                     {
-                                        contactContent.phone.map((item, index)=> <span  key={index}>{item}</span>)
-                                    }
-                                </div>
-                            </div>
+                                        contactContent.socialmedia.instagram &&
+                                        <motion.li
+                                        variants={scaleAnim}
+                                        >
+                                            <DefaultIconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.instagram)} >
+                                            <Instagram />
+                                            </DefaultIconButton>
+                                        </motion.li>
 
-                            <div className="item_">
-                                <div className="icon_">
-                                    <Mail />
-                                </div>
-                                <div className="field_">
+                                    }
+
                                     {
-                                        contactContent.email.map((item, index)=> <span  key={index}>{item}</span>)
+                                        contactContent.socialmedia.twitter &&
+                                        <motion.li
+                                        variants={scaleAnim}
+                                        >
+                                            <DefaultIconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.twitter)} >
+                                                <Twitter />
+                                            </DefaultIconButton>
+                                        </motion.li>
+
                                     }
-                                </div>
-                            </div>
-                        </StyledAddressWrapper>
 
-                    </div>
+                                    {
+                                        contactContent.socialmedia.youtube &&
+                                        <motion.li
+                                        variants={scaleAnim}
+                                        >
+                                            <DefaultIconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.youtube)} >
+                                                <Youtube />
+                                            </DefaultIconButton>
+                                        </motion.li>
 
-                    <StyledSocialContact>
-                        <h4>Follow Us On</h4>
+                                    }
+                                </ul>
+                            }
 
-                        {   
-                            contactContent.socialmedia &&
-                            <ul>
-                                {
-                                    contactContent.socialmedia.facebook &&
-                                    <li>
-                                        <IconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.facebook)} >
-                                            <Facebook />
-                                        </IconButton>
-                                    </li>
+                        </StyledSocialContact>
 
-                                }
+                    </StyledContactWrapper>
 
-                                {
-                                    contactContent.socialmedia.instagram &&
-                                    <li>
-                                        <IconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.instagram)} >
-                                           <Instagram />
-                                        </IconButton>
-                                    </li>
-
-                                }
-
-                                {
-                                    contactContent.socialmedia.twitter &&
-                                    <li>
-                                        <IconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.twitter)} >
-                                            <Twitter />
-                                        </IconButton>
-                                    </li>
-
-                                }
-
-                                {
-                                    contactContent.socialmedia.youtube &&
-                                    <li>
-                                        <IconButton color={'white'} iconSize={'xs'} clicked={ ()=> openSocial(contactContent.socialmedia.youtube)} >
-                                            <Youtube />
-                                        </IconButton>
-                                    </li>
-
-                                }
-                            </ul>
-                        }
-
-                    </StyledSocialContact>
-
-                </StyledContactWrapper>
-
+                </motion.div>
+            
             </Container>
         </UISection>
     )

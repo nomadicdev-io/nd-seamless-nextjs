@@ -9,6 +9,7 @@ const StytledClientItem = styled.a`
     background-color: var(--white-color);
     overflow: hidden;
     border-radius: calc(var(--font-size) * 1.5);
+    transition-timing-function: var(--ease);
 
     img{
         position: relative;

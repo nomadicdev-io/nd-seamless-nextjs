@@ -11,14 +11,28 @@ import AnchorButton, { ButtonGroup, IconButton } from "../Buttons";
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
 import ClientItem from "../ClientItem";
-import { StyledQualityWrapper } from "../styles/Client.styles";
 import ClientsQuality from "../ClientsQuality";
+import { motion } from "framer-motion";
 
 const HomeClients = ()=> {
 
     const {clientsContent} = useWebsiteContext();
     const swiperNext = useRef(null)
     const swiperPrev = useRef(null)
+
+    const clientsSwiperVariant = {
+        offscreen: {opacity: 0},
+        onscreen: {
+            opacity: 1,
+            transition: {
+                delay: 0.2,
+                staggerChildren: 0.1,
+                when: "beforeChildren",
+                delayChildren: 0.2,
+            }
+        }
+    }
+
 
     return (
         <>
@@ -31,7 +45,13 @@ const HomeClients = ()=> {
                             <UITitle title={clientsContent.title} />
                         </UITitleWrapper>
 
-                        <StyledWrapper>
+                        <StyledWrapper
+                            as={motion.div}
+                            initial="offscreen"
+                            whileInView="onscreen"
+                            variants={clientsSwiperVariant}
+                            viewport={{ once: true }}
+                        >
                             <Swiper
                                 modules={[Navigation]}
                                 spaceBetween={30}

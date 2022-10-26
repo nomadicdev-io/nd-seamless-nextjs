@@ -2,9 +2,10 @@ import { StyledBannerBG } from "./styles/Banner.stlyles"
 import { motion } from "framer-motion"
 import Image from "next/image";
 
-const BannerBG = ()=> {
 
-    const bgAnim = {
+const BannerBG = ()=> {
+    
+    const BannerbgAnim = {
         hidden: { opacity: 0, scale: 1.25},
         visible: { 
             opacity: 1, 
@@ -17,8 +18,14 @@ const BannerBG = ()=> {
     }
 
     return (
-        <StyledBannerBG >
-            <Image layout="fill" src="/banner_bg.png" alt="Seamless" />
+        <StyledBannerBG>
+            <motion.div 
+            variants={BannerbgAnim}
+            initial="hidden"
+            animate="visible"
+            className="image_placeholder">
+                <Image layout="fill" src="/banner_bg.png" alt="Seamless" />
+            </motion.div>
         </StyledBannerBG>
     )
 }

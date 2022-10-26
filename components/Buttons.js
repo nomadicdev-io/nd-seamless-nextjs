@@ -1,11 +1,19 @@
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import { StyledAnchorButton, StyledButtonGroup, StyledIconButton, StyledToggleButton } from "./styles/Button.styles";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion"
 
+const DefaultIconButton = ((props)=> {
+    return (
+        <StyledIconButton {...props} onClick={props.clicked}> 
+            {props.children}
+        </StyledIconButton>
+    )
+})
+
 const IconButton = forwardRef((props, ref)=> {
     return (
-        <StyledIconButton ref={ref} {...props} onClick={props.clicked}> 
+        <StyledIconButton ref={ref} {...props}> 
             {props.children}
         </StyledIconButton>
     )
@@ -29,18 +37,10 @@ const ButtonGroup = ({children, align, justify, margintop = 0, animdelay})=> {
     )
 }
 
-const ToggleButton = ()=> {
-
-    const [isActive, setActive] = useState(false)
-
-    const toggleFunc = ()=> {
-        setActive(!isActive)
-
-        console.log(isActive)
-    }
+const ToggleButton = ({cstate, clicked})=> {
 
    return (
-        <StyledToggleButton className={isActive ? 'active' : ''} onClick={toggleFunc}>
+        <StyledToggleButton className={cstate ? 'active' : ''} onClick={clicked}>
             <span></span>
         </StyledToggleButton>
     )
@@ -58,5 +58,5 @@ export default function AnchorButton({title, href, children}){
     )
 }
 
-export {IconButton, ToggleButton, ButtonGroup};
+export {IconButton, ToggleButton, ButtonGroup, DefaultIconButton};
 

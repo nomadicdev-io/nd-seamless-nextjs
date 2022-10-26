@@ -154,6 +154,14 @@ const StyledBannerBG = styled.div`
        }
     }
 
+    .image_placeholder{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
     img{
             position: relative;
             display: block;

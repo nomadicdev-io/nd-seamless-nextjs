@@ -58,6 +58,7 @@ const StyledNavImage = styled.div`
     width: auto;
     height: 100%;
     max-height: 65%;
+    z-index: 2;
     .nav_link_{
         position: relative;
         display: block;
@@ -79,6 +80,7 @@ const StyledNavBox = styled.div`
     align-items: center;
     justify-content: flex-start;
     grid-gap: 1.25rem;
+    z-index: 1;
 `
 
 const StyledNav = styled.nav`
@@ -118,6 +120,43 @@ const StyledNav = styled.nav`
 
     }
 
-`
+`;
 
-export {StyledHeader, StyledHeaderWrapper, StyledNavImage, StyledNavBox, StyledNav};
+const StyledMobileMenu = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: var(--third-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10vh 32px;
+
+    .nav_list{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+
+        .nav_item{
+            position: relative;
+            display: block;
+            width: 100%;
+
+            a{
+                position: relative;
+                display: block;
+                padding: 0.25em 0;
+                font-size: 6vw;
+                font-weight: 500;
+                color: var(--text-color);
+            }
+
+        }
+    }
+`;
+
+export {StyledHeader, StyledHeaderWrapper, StyledNavImage, StyledNavBox, StyledNav, StyledMobileMenu};

@@ -10,6 +10,7 @@ import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from "framer-motion";
 
 import 'swiper/css';
 import ProductsItem from '../ProductsItem';
@@ -19,6 +20,19 @@ const HomeProducts = ()=> {
     const {productsContent} = useWebsiteContext();
     const swiperNext = useRef(null)
     const swiperPrev = useRef(null)
+
+    const productSwiperVariant = {
+        offscreen: {opacity: 0},
+        onscreen: {
+            opacity: 1,
+            transition: {
+                delay: 1,
+                staggerChildren: 0.1,
+                when: "beforeChildren",
+                delayChildren: 0.2,
+            }
+        }
+    }
 
     return (
 
@@ -55,7 +69,13 @@ const HomeProducts = ()=> {
 
                     </StyledProductContent>
 
-                    <StyledProductSwiper>
+                    <StyledProductSwiper
+                        as={motion.div}
+                        initial="offscreen"
+                        whileInView="onscreen"
+                        variants={productSwiperVariant}
+                        viewport={{ once: true }}
+                    >
                         <Swiper
                             className="product_swiper"
                             modules={[Navigation]}

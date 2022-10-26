@@ -9,7 +9,9 @@ import { ArrowRight } from 'react-feather';
 import { StyledAboutImage, StyledAboutWidget } from "../styles/Common.styles";
 import WidgetItem from "../WidgetItem";
 import Image from "next/image";
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+
+
 
 const HomeAbout = ()=> {
 
@@ -27,7 +29,7 @@ const HomeAbout = ()=> {
             }
         }
     }
-
+    
     const imageItem = {
         offscreen: { opacity: 0, y: 200},
         onscreen: { 

@@ -13,7 +13,7 @@ import ServiceItem from "../ServiceItem";
 import AnchorButton, { ButtonGroup, IconButton } from "../Buttons";
 import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
-
+import { motion } from "framer-motion";
 
 import 'swiper/css';
 
@@ -22,6 +22,19 @@ const HomeServices = ()=> {
     const {servicesContent} = useWebsiteContext();
     const swiperNext = useRef(null)
     const swiperPrev = useRef(null)
+
+    const servicesSwiperVariant = {
+        offscreen: {opacity: 0},
+        onscreen: {
+            opacity: 1,
+            transition: {
+                delay: 0.2,
+                staggerChildren: 0.1,
+                when: "beforeChildren",
+                delayChildren: 0.2,
+            }
+        }
+    }
 
     return (
 
@@ -41,7 +54,13 @@ const HomeServices = ()=> {
                         <p>{servicesContent.description}</p>
                     </TextArea>
 
-                    <StyledWrapper>
+                    <StyledWrapper
+                         as={motion.div}
+                         initial="offscreen"
+                         whileInView="onscreen"
+                         variants={servicesSwiperVariant}
+                         viewport={{ once: true }}
+                    >
                         <Swiper
                             className="services_swiper"
                             modules={[Navigation]}

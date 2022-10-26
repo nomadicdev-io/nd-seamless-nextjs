@@ -1,11 +1,15 @@
 import Link from "next/link";
-import { IconButton, ToggleButton } from "../Buttons";
+import { DefaultIconButton, ToggleButton } from "../Buttons";
 import { StyledNav, StyledNavBox } from "../styles/Header.styles";
 import { ReactSVG } from 'react-svg'
-import { isMobile } from 'react-device-detect';
+import { MobileView, BrowserView } from 'react-device-detect';
+import { useState } from "react";
+import MobileMenu from "./MobileMenu";
+import { AnimatePresence } from "framer-motion"
 
 const HeaderComponent = ()=> {
 
+    const [menuIsActive, setMenuIsActive] = useState(false)
     
     const navLinks = [
         {name: 'Home', link: '/', scroll: true},
@@ -17,21 +21,37 @@ const HeaderComponent = ()=> {
         {name: 'Contact Us', link: '/#contact', scroll: true}
     ]
 
+    const toggleClick = ()=> {
+        setMenuIsActive(!menuIsActive)
+    }
+
     return (
         <StyledNavBox>
-            <StyledNav>
-                <ul className="nav_list">
-                   {
-                    navLinks.map((item, index)=>  <li key={index} className="nav_item"><Link href={item.link} scroll={item.scroll}>{item.name}</Link></li>)
-                   }
-                </ul>
-            </StyledNav>
-            <IconButton color={'whatsapp'}>
+
+            <MobileView>
+                <AnimatePresence>
+                    { menuIsActive && <MobileMenu data={navLinks} clicked={toggleClick}/> }
+                </AnimatePresence>
+            </MobileView>
+
+            <BrowserView>
+                    <StyledNav>
+                        <ul className="nav_list">
+                        {
+                            navLinks.map((item, index)=>  <li key={index} className="nav_item"><Link href={item.link} scroll={item.scroll}>{item.name}</Link></li>)
+                        }
+                        </ul>
+                    </StyledNav>
+            </BrowserView>
+
+            <DefaultIconButton color={'whatsapp'}>
                 <ReactSVG src="/whatsapp.svg" />
-            </IconButton>
-            {
-                isMobile && <ToggleButton />
-            }
+            </DefaultIconButton>
+
+            <MobileView>
+                <ToggleButton clicked={toggleClick} cstate={menuIsActive}/>
+            </MobileView>
+        
         </StyledNavBox> 
     )
 }

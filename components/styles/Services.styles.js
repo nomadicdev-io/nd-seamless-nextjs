@@ -8,6 +8,7 @@ const StyledServiceItem = styled.div`
     background-color: var(--third-color);
     overflow: hidden;
     border-radius: calc(var(--font-size) * 1.75);
+    transition-timing-function: var(--ease);
 
     .content_{
         position: relative;

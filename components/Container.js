@@ -1,9 +1,10 @@
 import styles from "../styles/Home.module.scss";
-
-export default function Container({children}) {
+const Container = ({children})=> {
   return (
     <div className={styles.container}>
         {children}
     </div>
   )
 }
+
+export default Container;

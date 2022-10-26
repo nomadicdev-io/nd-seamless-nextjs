@@ -67,8 +67,10 @@ const StyledProductItem = styled.a`
     padding: calc(var(--font-size) * 0.75);
     background-color: var(--third-color);
     border-radius: calc(var(--font-size) * 1.5);
+    transition-timing-function: var(--ease);
     cursor: pointer;
     overflow: hidden;
+    z-index: 1;
 
     &:before{
         content: '';
@@ -84,6 +86,7 @@ const StyledProductItem = styled.a`
         transform-origin: bottom;
         opacity: 0;
         transition: all 0.3s ease;
+        z-index: 0;
     }
 
     .image_{

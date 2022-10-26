@@ -18,6 +18,7 @@ const StyledIconButton = styled.button`
     width: calc(var(--font-size) * 2.75);
     height: calc(var(--font-size) * 2.75);
     border-radius: calc(var(--font-size) * 0.5);
+    color: var(--text-color);
     border: none;
     outline: none;
     padding: 0;

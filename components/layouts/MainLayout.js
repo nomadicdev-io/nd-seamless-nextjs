@@ -10,14 +10,14 @@ export default function MainLayout({children}) {
   const {metadata} = useWebsiteContext();
   const [scroll, setScroll] = useState(true)
 
-  useEffect(() => {
-    document.addEventListener("scroll", () => {
-      const scrollCheck = window.scrollY < 50
-      if (scrollCheck !== scroll) {
-        setScroll(scrollCheck)
-      }
-    })
-  })
+  // useEffect(() => {
+  //   document.addEventListener("scroll", () => {
+  //     const scrollCheck = window.scrollY < 50
+  //     if (scrollCheck !== scroll) {
+  //       setScroll(scrollCheck)
+  //     }
+  //   })
+  // })
   
 
   return (

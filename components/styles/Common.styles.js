@@ -106,6 +106,7 @@ const StyledDownloadWrapper = styled.a`
     overflow: hidden;
     border-radius: calc(var(--font-size) * 1.75);
     background: var(--gradient-color);
+    transition: all 0.3s var(--ease);
 
     .left_{
         position: relative;
@@ -176,6 +177,10 @@ const StyledWrapper = styled.div`
     display: block;
     width: 100%;
     margin-top: 1.5em;
+
+    .swiper-slide{
+        overflow: hidden;
+    }
 
     .services_swiper{
         overflow: initial;
