@@ -9,6 +9,7 @@ const TextArea = ({children, align, nopadding, animdelay})=> {
         whileInView={{ opacity: 1, y: 0, scaleY: 1 }}
         viewport={{ once: true}}
         transition={{type: 'spring', duration: 1.2, delay: animdelay ? animdelay : 0.8}}
+        style={{ originX: 0.5, originY: 0 }}
         align={align} 
         nopadding={nopadding}
         >

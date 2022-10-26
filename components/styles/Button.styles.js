@@ -71,7 +71,7 @@ const StyledIconButton = styled.button`
                     `;
                 default:
                     return css`
-                        width: 80%;
+                        width: calc(var(--font-size) * 1.5);
                     `
             }   
         }}

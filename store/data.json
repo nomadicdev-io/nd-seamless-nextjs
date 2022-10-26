@@ -88,6 +88,9 @@
     },
     "clients": {
         "title": "Our Clients",
+        "metadata": {
+            "title": "Clients | Seamless Oilfield Equipments Supplies"
+        },
         "items": [
             {"id": "client-01", "name": "ADNOC", "imageUrl": "https://ciersten.sirv.com/Images/client-01.png", "link": "https://www.adnoc.ae/"},
             {"id": "client-02","name": "Kuwait Oil Compan", "imageUrl": "https://ciersten.sirv.com/Images/client-02.png", "link": "https://www.kockw.com/"},

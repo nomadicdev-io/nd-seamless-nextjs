@@ -131,6 +131,79 @@ const StyledBannerWrapper = styled.div`
         }
     }
 
+    .inner_content{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+
+        h1{
+            position: relative;
+            display: block;
+            font-size: calc(var(--font-size) * 4.5);
+            margin: 0;
+            line-height: 2;
+
+            @media only screen and (max-width:767px){
+                font-size: calc(var(--font-size) * 2.75);
+            }
+
+        }
+        
+    }
+
+    .breadcrumb_{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        
+        li{
+            position: relative;
+            display: block;
+
+            &:last-child{
+                &:after{
+                    display: none;
+                }
+            }
+
+            &:after{
+                content: '/';
+                position: relative;
+                padding: 0 1em;
+                display: inline-block;
+                color: var(--text-color);
+                font-size: calc(var(--font-size) * 0.9);
+            }
+
+            a{
+                position: relative;
+                display: inline-block;
+                color: var(--text-color);
+                font-size: calc(var(--font-size) * 0.9);
+                max-width: 220px;
+                text-overflow: ellipsis;
+                opacity: 0.75;
+                &:hover{
+                    color: var(--primary-color);
+                }
+            }
+
+            .current {
+                position: relative;
+                display: inline-block;
+                color: var(--text-color);
+                font-size: calc(var(--font-size) * 0.9);
+            }
+        }
+    }
 `;
 
 const StyledBannerBG = styled.div`
@@ -161,17 +234,26 @@ const StyledBannerBG = styled.div`
         width: 100%;
         height: 100%;
     }
+    
 
     img{
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: right; 
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: right; 
+    }
 
-            
-        }
+    .overlay_{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(4,4,4);
+        background: linear-gradient(0deg, rgba(4,4,4,1) 0%, rgba(4,4,4,0) 100%);
+    }
 
 `
 

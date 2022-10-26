@@ -30,7 +30,7 @@ const StyledSection = styled.section`
     display: block;
     width: 100%;
     overflow: hidden;
-    padding-top: var(--s-padding);
+    padding-top: ${({noPaddingTop})=> noPaddingTop ? 0 : 'var(--s-padding)'};
     padding-bottom: ${({havbePaddingBottom})=> havbePaddingBottom ? 'var(--s-padding)' : 0};
 
 `;
@@ -445,6 +445,32 @@ const StyledAboutImage = styled.div`
 
 `;
 
+const StyledInnerPageBanner = styled.section`
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 50vh;
+    padding-bottom: 7.5vh;
+    overflow: hidden;
+`
+
+const StyledCommonGrid = styled.div`
+    position: relative;
+    display: grid;
+    margin-top: calc(var(--font-size) * 3);
+    grid-template-columns: repeat( ${({lg})=> lg ? lg : 4} , 1fr);
+    grid-gap: calc(var(--font-size) * 1.25);
+
+    @media only screen and (min-width: 767px) and (max-width: 1200px) {
+        grid-template-columns: repeat( ${({md})=> md ? md : 3} , 1fr);
+    }
+
+    @media only screen and (max-width:767px) {
+        grid-template-columns: repeat( ${({sm})=> sm ? sm : 1} , 1fr);
+    }
+
+`;
+
 export {
     StyledSection, 
     StyledSectionTitle, 
@@ -460,5 +486,7 @@ export {
     StyledAboutWidget,
     StyledWidgetItem,
     StyledAboutImage,
-    StyledLoadingScreen
+    StyledLoadingScreen,
+    StyledInnerPageBanner,
+    StyledCommonGrid
 };

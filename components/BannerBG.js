@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 import Image from "next/image";
 
 
-const BannerBG = ()=> {
+const BannerBG = ({overlay})=> {
     
     const BannerbgAnim = {
         hidden: { opacity: 0, scale: 1.25},
@@ -26,6 +26,10 @@ const BannerBG = ()=> {
             className="image_placeholder">
                 <Image layout="fill" src="/banner_bg.png" alt="Seamless" />
             </motion.div>
+
+            {
+                overlay && <div className="overlay_"></div>
+            }
         </StyledBannerBG>
     )
 }
