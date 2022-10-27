@@ -7,6 +7,7 @@ import { useWebsiteContext } from "../../store/websiteContent";
 import { StyledDownloadWrapper, StyledWhoWrapper } from "../styles/Common.styles";
 import { ReactSVG } from "react-svg";
 import { motion } from "framer-motion"
+import Link from "next/link";
 
 const HomeWho = ()=> {
 
@@ -66,27 +67,32 @@ const HomeWho = ()=> {
                                 </TextArea>
                             </div>
 
-                            <StyledDownloadWrapper
-                                as={motion.a}
-                                variants={downAnim}
-                                target="_blank" 
+                            <Link
                                 href={whoContent.download.link}
+                                passHref={true}
                             >
-                                <motion.div 
+                                <StyledDownloadWrapper
+                                    as={motion.a}
                                     variants={downAnim}
-                                    className="left_"
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
                                 >
-                                    <h3>{whoContent.download.title}</h3>
-                                    <p>{whoContent.download.buttontitle}</p>
-                                </motion.div>
+                                    <motion.div 
+                                        variants={downAnim}
+                                        className="left_"
+                                    >
+                                        <h3>{whoContent.download.title}</h3>
+                                        <p>{whoContent.download.buttontitle}</p>
+                                    </motion.div>
 
-                                <motion.div 
-                                    variants={downAnim}
-                                    className="right_"
-                                >
-                                    <ReactSVG src="/download.svg" />
-                                </motion.div>
-                            </StyledDownloadWrapper>
+                                    <motion.div 
+                                        variants={downAnim}
+                                        className="right_"
+                                    >
+                                        <ReactSVG src="/download.svg" />
+                                    </motion.div>
+                                </StyledDownloadWrapper>
+                            </Link>
 
                         </StyledWhoWrapper>
                     </Container>

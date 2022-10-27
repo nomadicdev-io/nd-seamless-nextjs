@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { StytledClientItem } from "./styles/Client.styles";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 
 const ClientItem = ({data})=> {
@@ -17,14 +18,21 @@ const ClientItem = ({data})=> {
     }
 
     return (
-        <StytledClientItem 
-        as={motion.a}
-        variants={clientItemVariant}
-        href={data.link} 
-        title={data.name} 
-        target="_blank">
-            <Image src={data.imageUrl} layout="fill" objectFit="contain" objectPosition="center" alt={data.name}/>
-        </StytledClientItem>
+
+        <Link href={data.link} >
+
+            <StytledClientItem 
+                as={motion.a}
+                variants={clientItemVariant}
+                title={data.name} 
+                target="_blank" 
+                rel="noopener noreferrer"
+            >
+
+                <Image src={data.imageUrl} layout="fill" objectFit="contain" objectPosition="center" alt={data.name}/>
+            </StytledClientItem>
+
+        </Link>
     )
 }
 
