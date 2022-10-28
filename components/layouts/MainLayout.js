@@ -1,13 +1,10 @@
-import Head from "next/head";
 import styles from "../../styles/Home.module.scss";
 import Footer from "./Footer";
 import Header from "./Header";
-import { useWebsiteContext } from "../../store/websiteContent";
 import { useState, useEffect } from "react";
 
 export default function MainLayout({children}) {
 
-  const {metadata} = useWebsiteContext();
   const [scroll, setScroll] = useState(true)
 
   // useEffect(() => {
@@ -22,7 +19,8 @@ export default function MainLayout({children}) {
 
   return (
     <>
-        <Head>
+
+        {/* <Head>
             <title>{metadata.title}</title>
             <meta name="description" content={metadata.description}/>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
@@ -46,7 +44,8 @@ export default function MainLayout({children}) {
             <link rel="icon" type="image/png" size="96x96" href="/favicon-96x96.png"/>
             <link rel="icon" type="image/png" size="16x16" href="/favicon-16x16.png"/>
             <link rel="manifest" href="/manifest.json"/>
-        </Head>
+          </Head> */}
+       
         <Header isScrolled={!scroll}/>
 
             <main className={styles.page_}>{children}</main>
