@@ -25,6 +25,8 @@ function MyApp({ Component, pageProps }) {
             <title>Seamless Oilfield Equipments Supplies | #1 Oilfield Equipments Supplies in UAE | Abu Dhabi | Dubai</title>
             <meta name="description" content="We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China ."/>
             <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+            <meta property="og:url" content="https://smls.ae/"/>
+            <meta property="og:site_name" content="Seamless Oilfield Equipment Supplies"/>
             <meta property="og:title" content="Seamless Oilfield Equipments Supplies | #1 Oilfield Equipments Supplies in UAE | Abu Dhabi | Dubai" />
             <meta property="og:description" content="We  Seamless Oilfield Equipment Supplies In Abudhabi From 2001  as a   Stockiest and  Supplier for  Oil& GAS industry Projects and Infrastructural materials to Major EPC contractors , MEP contractors We have an integrated stock of very high quality products like Pipes, Valves, Fittings, Flanges Gaskets and Stud bolts etc, - All from leading manufactures from Europe and China ." />
             <meta property="og:image" content="https://ciersten.sirv.com/Images/og-bg.jpg" />
