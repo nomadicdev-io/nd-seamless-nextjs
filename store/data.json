@@ -104,9 +104,9 @@
     },
     "contact": {
         "title": "Contact Us",
-        "address": ["Address Line 1", "Abu Dhabi", "United Arab Emirates"],
-        "phone": ["+971 456 788", "+971 525 90123"],
-        "email": ["info@seamless.com", "contact @seamless.com"],
+        "address": ["Musaffah", "Abu Dhabi", "United Arab Emirates"],
+        "phone": ["+971 559120674"],
+        "email": ["seamless@smls.ae"],
         "location": {
             "lng" : "54.3773438",
             "lat" : "24.453884"
