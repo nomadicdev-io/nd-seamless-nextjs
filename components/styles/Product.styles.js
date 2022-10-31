@@ -59,7 +59,7 @@ const StyledProductSwiper = styled.div`
     }
 `;
 
-const StyledProductItem = styled.a`
+const StyledProductItem = styled.div`
     
     position: relative;
     display: block;

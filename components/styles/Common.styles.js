@@ -471,6 +471,132 @@ const StyledCommonGrid = styled.div`
 
 `;
 
+const StyledModal = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .overlay_{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        opacity: 0.7;
+    }
+
+    .close_btn_wrap{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        padding: 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+`;
+
+const StyleModalContent = styled.div`
+    position: relative;
+    display: block;
+    padding:calc(var(--font-size) * 2);
+    border-radius: calc(var(--font-size) * 2);
+    overflow: hidden;
+    background-color: var(--third-color);
+    min-width: 50%;
+    max-width: 50%;
+    z-index: 3;
+
+    @media only screen and (max-width:1200px){
+        min-width: 75%;
+        max-width: 75%;
+    }
+
+    @media only screen and (max-width: 767px){
+        min-width: 90%;
+        max-width: 90%;
+    }
+
+    .inner_{
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1.25fr;
+        grid-gap: 1.5em;
+        align-items: flex-start;
+
+        @media only screen and (max-width:767px){
+            grid-template-columns: 1fr;
+        }
+
+        .image_{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            width: 100%;
+            height: 0;
+            padding-top: 100%;
+            overflow: hidden;
+            border-radius: calc(var(--font-size) * 1.75);
+
+            img{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                opacity: 0.9;
+            }
+        }
+    }
+
+    .content_{
+        position: relative;
+        display: block;
+        width: 100%;
+        height: auto;
+
+        .title_{
+            position: relative;
+            display: block;
+            width: 100%;
+            padding: 0 0.25em;
+            h4{
+                position: relative;
+                display: block;
+                margin: 0;
+                font-size: calc(var(--font-size) * 1.75);
+                line-height: 1.75;
+                color: var(--text-color);
+            }
+
+            p{
+                position: relative;
+                display: block;
+                margin: 0;
+                font-weight: 500;
+                opacity: 0.65;
+                font-size: calc(var(--font-size) * 1);
+                line-height: 1.75;
+                color: var(--text-color);
+            }
+        }
+
+    }
+
+`;
+
 export {
     StyledSection, 
     StyledSectionTitle, 
@@ -488,5 +614,7 @@ export {
     StyledAboutImage,
     StyledLoadingScreen,
     StyledInnerPageBanner,
-    StyledCommonGrid
+    StyledCommonGrid,
+    StyledModal,
+    StyleModalContent
 };

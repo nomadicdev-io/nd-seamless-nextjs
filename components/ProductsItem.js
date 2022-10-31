@@ -4,7 +4,7 @@ import { ArrowRightCircle } from "react-feather";
 import { StyledProductItem } from "./styles/Product.styles";
 import { motion } from "framer-motion";
 
-const ProductsItem = ({data})=> {
+const ProductsItem = ({data, itemClicked})=> {
 
     const productItemVariant = {
         offscreen: {opacity: 0, translateY: '100%'},
@@ -18,10 +18,10 @@ const ProductsItem = ({data})=> {
     }
 
     return ( 
-        <Link href={`/products/${data.id}`} >
             <StyledProductItem
-                as={motion.a}
+                as={motion.div}
                 variants={productItemVariant}
+                onClick={itemClicked}
             >
                 <div className="image_">
                     <Image 
@@ -41,7 +41,7 @@ const ProductsItem = ({data})=> {
                     </div>
                 </div>
             </StyledProductItem>
-        </Link> 
+
     )
 }
 

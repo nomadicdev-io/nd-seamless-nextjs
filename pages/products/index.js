@@ -7,10 +7,15 @@ import UISection from "../../components/UISection";
 import { useWebsiteContext } from "../../store/websiteContent";
 import ProductsItem from "../../components/ProductsItem";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import UIModal from "../../components/UIModal";
+import { AnimatePresence } from "framer-motion";
 
 const ProductsPage = ()=> {
 
     const {productsContent} = useWebsiteContext();
+    const [modelContent, setModalContent] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const productSwiperVariant = {
         offscreen: {opacity: 0},
@@ -23,6 +28,15 @@ const ProductsPage = ()=> {
                 delayChildren: 0.2,
             }
         }
+    }
+
+    const itemClicked = (value)=> {
+        setModalContent(value);
+        setShowModal(true);
+    }
+
+    const modalClose = ()=> {
+        setShowModal(false);
     }
 
     return (
@@ -46,11 +60,20 @@ const ProductsPage = ()=> {
                         variants={productSwiperVariant}
                         viewport={{ once: true }}
                     >
-                        { productsContent.items.map((item)=> <ProductsItem key={item.id} data={item} />) }
+                        { productsContent.items.map((item)=> <ProductsItem key={item.id} data={item} itemClicked={()=> itemClicked(item)}/>) }
                     </StyledCommonGrid>
 
                 </Container>
             </UISection>
+
+            <AnimatePresence>
+                {
+                    showModal &&
+                    <UIModal data={modelContent} modalClose={()=> modalClose()}/>
+                }
+            </AnimatePresence>
+
+
         </>
     )
 }

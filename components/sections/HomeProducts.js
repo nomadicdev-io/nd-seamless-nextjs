@@ -1,4 +1,4 @@
-import {useRef} from 'react';
+import {useRef, useState} from 'react';
 import UISection from "../UISection";
 import { useWebsiteContext } from "../../store/websiteContent";
 import { StyledProductContent, StyledProductSwiper, StyledProductWrapper } from "../styles/Product.styles";
@@ -10,16 +10,19 @@ import { ArrowLeft, ArrowRight } from 'react-feather';
 import UISwiperNav from "./SwiperNav";
 import { Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 import 'swiper/css';
 import ProductsItem from '../ProductsItem';
+import UIModal from '../UIModal';
 
 const HomeProducts = ()=> {
 
     const {productsContent} = useWebsiteContext();
     const swiperNext = useRef(null)
     const swiperPrev = useRef(null)
+    const [modelContent, setModalContent] = useState('');
+    const [showModal, setShowModal] = useState(false);
 
     const productSwiperVariant = {
         offscreen: {opacity: 0},
@@ -32,6 +35,15 @@ const HomeProducts = ()=> {
                 delayChildren: 0.2,
             }
         }
+    }
+
+    const itemClicked = (value)=> {
+        setModalContent(value);
+        setShowModal(true);
+    }
+
+    const modalClose = ()=> {
+        setShowModal(false);
     }
 
     return (
@@ -112,7 +124,7 @@ const HomeProducts = ()=> {
                             {
                                 productsContent.items.map((item)=> 
                                 <SwiperSlide key={item.id}>
-                                    <ProductsItem data={item} />
+                                    <ProductsItem data={item}  itemClicked={()=> itemClicked(item)}/>
                                 </SwiperSlide> )
                             }
 
@@ -122,7 +134,15 @@ const HomeProducts = ()=> {
                 </StyledProductWrapper>
 
             </UISection>
+
         }
+
+       <AnimatePresence>
+            {
+                showModal &&
+                <UIModal data={modelContent} modalClose={()=> modalClose()}/>
+            }
+       </AnimatePresence>
        </>
        
     )
