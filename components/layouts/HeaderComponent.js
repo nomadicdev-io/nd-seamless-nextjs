@@ -6,11 +6,13 @@ import { MobileView, BrowserView } from 'react-device-detect';
 import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 import { AnimatePresence } from "framer-motion"
+import { useWebsiteContext } from "../../store/websiteContent";
 
 const HeaderComponent = ()=> {
 
     const [menuIsActive, setMenuIsActive] = useState(false)
-    
+    const {contactContent} = useWebsiteContext();
+
     const navLinks = [
         {name: 'Home', link: '/', scroll: true},
         {name: 'About', link: '/#about', scroll: true},
@@ -23,6 +25,10 @@ const HeaderComponent = ()=> {
 
     const toggleClick = ()=> {
         setMenuIsActive(!menuIsActive)
+    }
+
+    const openWhatsapp = ()=> {
+        window.open( contactContent.whatsapp, "_blank");
     }
 
     return (
@@ -44,7 +50,7 @@ const HeaderComponent = ()=> {
                     </StyledNav>
             </BrowserView>
 
-            <DefaultIconButton color={'whatsapp'}>
+            <DefaultIconButton color={'whatsapp'} clicked={openWhatsapp}>
                 <ReactSVG src="/whatsapp.svg" />
             </DefaultIconButton>
 
