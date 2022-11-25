@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }) {
             <link rel="icon" type="image/png" size="16x16" href="/favicon-16x16.png"/>
             <link rel="manifest" href="/manifest.json"/>
 
-            <Script  async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ1PJRG7M7" />
+            <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-ZZ1PJRG7M7" />
 
             <Script
             id='google-analytics'
