@@ -54,18 +54,21 @@ function MyApp({ Component, pageProps }) {
           <Script strategy="afterInteractive" src="https://www.googletagmanager.com/gtag/js?id=G-ZZ1PJRG7M7" />
 
           <Script
-          id='google-analytics'
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-          __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
+            id='google-analytics'
+            strategy="afterInteractive"
+          >
 
-          gtag('config', 'G-ZZ1PJRG7M7');
-          `,
-          }}
-          />
+            {
+              `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+  
+              gtag('config', 'G-ZZ1PJRG7M7');
+              `
+            }
+
+          </Script>
 
         {
           isLoading &&
